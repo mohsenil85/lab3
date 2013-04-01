@@ -1,0 +1,18 @@
+Logan Mohseni
+-01449704
+Lab 3 Report
+Scheme
+
+1.  Given input of '(3 1 4 1 9 5), the function f returns (4 2 5 2 10 6).  
+2.  The function f takes a list of numbers as an arguement and adds 1 to each member 
+of the list.
+3.  ;  the following line is an if statement. in scheme, if statments have the 
+    ; following structure:  (if (test) (then-br) (else-br)).  null? tests if the argument is 
+    ; null or not.  If it is null, the statment will return the the (then-br) expression.  
+    ; if it is false, it will return the (else-br) expression.
+4.  ;  The following line is a literal null or false in scheme.  it is used to bottom 
+    ; out the recursion.
+5.  ;  the following line takes the first element of a list and adds one to it, and then 
+    ; conses it onto the tail of the list, which tail itself the function f is applied 
+    ; to recursively.  in other words, it maps " + 1" to the list.
+
