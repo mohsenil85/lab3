@@ -3,7 +3,7 @@ Logan Mohseni
 Lab 3 Report
 Scheme
 
-1.  Given input of '(3 1 4 1 9 5), the function f returns (4 2 5 2 10 6).  
+1.  Given input of '(3 1 4 1 5 9), the function f returns (4 2 5 2 6 10).
 2.  The function f takes a list of numbers as an arguement and adds 1 to each member 
 of the list.
 3.  ;  the following line is an if statement. in scheme, if statments have the 
@@ -15,4 +15,22 @@ of the list.
 5.  ;  the following line takes the first element of a list and adds one to it, and then 
     ; conses it onto the tail of the list, which tail itself the function f is applied 
     ; to recursively.  in other words, it maps " + 1" to the list.
+
+6.    
+    
+    Frame 1:  f is applied to (1 2 3 4 5 6).  since the list is non-null, the else branch is hit
+            so it adds 1 to the car of the list and then conses it onto the tail (2 3 4 5 6) onto which f has been applied.
+    Frame 2:  f is applied to (2 3 4 5 6).  since the list is non-null, the else branch is hit
+            so it adds 1 to the car of the list and then conses it onto the tail (3 4 5 6) onto which f has been applied.
+    Frame 3:  f is applied to (3 4 5 6).  since the list is non-null, the else branch is hit
+            so it adds 1 to the car of the list and then conses it onto the tail (4 5 6) onto which f has been applied.
+    Frame 4:  f is applied to (4 5 6).  since the list is non-null, the else branch is hit
+            so it adds 1 to the car of the list and then conses it onto the tail (5 6) onto which f has been applied.
+    Frame 5:  f is applied to (6).  since the list is non-null, the else branch is hit
+            so it adds 1 to the car of the list and then conses it onto the tail () onto which f has been applied.
+    Frame 6:  f is applied to the null list ().  since (null? lst) returns true, the then branch is hit, bottoming out the recursion.
+              f is no longer called, so the function starts returning.  first it conses 7 onto the null list.  then it returns to the
+              context where it was called, which is fram 5.  in frame 5, 6 gets consed onto the list (7), and then returns.  etc until it returns 
+              the top of the recursion, and (+ 1) has been mapped to all elements in the list.
+
 
