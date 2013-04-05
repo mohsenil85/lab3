@@ -24,7 +24,6 @@
          lst)))
 
 (define (union lst1 lst2)
-  (cond ((or (null? lst1) (null? lst2))
-         "null list!")
-        ((
- 
+    (let x (append lst1 lst2))
+    (filter
+
