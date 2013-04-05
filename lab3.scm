@@ -23,7 +23,15 @@
            (eq? e x))
          lst)))
 
+(define (remove-dupes lst)
+  (cond
+    ((null? lst) '())
+    ((if (member? (car lst) (cdr lst))
+     (cdr lst)
+     (cons (car lst) (cdr lst))))
+    (else (cons (car lst) (remove-dupes (cdr lst))))))
+
 (define (union lst1 lst2)
-    (let x (append lst1 lst2))
-    (filter
+  (remove-dupes (append lst1 lst2)))
+
 
