@@ -26,10 +26,9 @@
 (define (remove-dupes lst)
   (cond
     ((null? lst) '())
-    ((if (member? (car lst) (cdr lst))
-     (cdr lst)
-     (cons (car lst) (cdr lst))))
-    (else (cons (car lst) (remove-dupes (cdr lst))))))
+    ((member? (car lst) (cdr lst))
+     (remove-dupes (cdr lst)))
+     (else (cons (car lst) (remove-dupes (cdr lst))))))
 
 (define (union lst1 lst2)
   (remove-dupes (append lst1 lst2)))
