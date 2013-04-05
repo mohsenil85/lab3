@@ -33,4 +33,12 @@
 (define (union lst1 lst2)
   (remove-dupes (append lst1 lst2)))
 
+(define (intersect lst1 lst2)
+  (if (null? lst1) '()
+    (let ((accumulator (member? (car lst1) lst2)))
+      (if (null? (cdr lst1))
+        (if accumulator lst1 '())
+        (if accumulator (cons (car lst1 ) ( intersect (cdr lst1) lst2))
+          (intersect (cdr lst1 ) lst2))))))
+
 
